@@ -169,3 +169,21 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+# Ignore entire data folder
+data/
+
+# Ignore specific folders
+logs/
+backup/
+temp/
+
+# Ignore all CSV, JSON, and TXT files inside any folder
+**/*.csv
+**/*.json
+**/*.JSON
+**/*.txt
+
+# Ignore Python cache
+__pycache__/
+
