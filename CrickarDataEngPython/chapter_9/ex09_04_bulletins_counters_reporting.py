@@ -11,6 +11,10 @@ if bulletins:
 else:
     print("✅ No bulletins found.")
 
+with open("bulletin_response.json", "w") as json_file:
+    json.dump(bulletin_response, json_file, indent=4)
+print("\n💾 Bulletin response saved to 'bulletin_response.json'.")    
+
 # Step 2: Read NiFi Counters
 counters_response = requests.get("http://localhost:9300/nifi-api/counters").json()
 counters = counters_response.get('counters', {}).get('aggregateSnapshot', {}).get('counters', [])
@@ -20,6 +24,10 @@ if counters:
         print(f"🔢 {counter['name']}: {counter['value']}")
 else:
     print("✅ No counters found.")
+
+with open("counters_response.json", "w") as json_file:
+    json.dump(counters_response, json_file, indent=4)
+print("\n💾 Counters response saved to 'counters_response.json'.")        
 
 # Step 3: Read Reporting Task Information
 REPORTING_TASK_ID = "bbf0937b-0194-1000-7991-d873b86c5e6d"  # Replace with actual task ID
