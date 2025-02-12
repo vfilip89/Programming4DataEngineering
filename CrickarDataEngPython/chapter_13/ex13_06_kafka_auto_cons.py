@@ -6,7 +6,7 @@ consumer = KafkaConsumer(
     bootstrap_servers="localhost:9092",
     auto_offset_reset="earliest",  # Start from beginning
     enable_auto_commit=True,  # Auto-commit offsets
-    value_deserializer=lambda v: json.loads(v.decode('utf-8'))
+    value_deserializer=lambda v: v.decode('utf-8')
 )
 
 for message in consumer:
