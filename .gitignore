@@ -181,15 +181,12 @@ temp/
 # Ignore all CSV, JSON, and TXT files inside any folder
 **/*.csv
 **/*.json
-
-!/home/vfilip/Documents/data_engineering/Programming4DataEngineering/CrickarDataEngPython/nifi_flow_definitions/**/*.json  # Allow JSON files inside this directory
-**/*.JSON
-
-!/home/vfilip/Documents/data_engineering/Programming4DataEngineering/CrickarDataEngPython/nifi_flow_definitions/**/*.JSON  # Allow JSON files inside this directory
 **/*.txt
 
 # Ignore Python cache
 __pycache__/
 
-
-!/home/vfilip/Documents/data_engineering/Programming4DataEngineering/CrickarDataEngPython/nifi_flow_definitions/   # Allow this specific directory
+# Allow JSON files inside nifi_flow_definitions/
+!CrickarDataEngPython/nifi_flow_definitions/
+!CrickarDataEngPython/nifi_flow_definitions/**/*.json
+!CrickarDataEngPython/nifi_flow_definitions/**/*.JSON
