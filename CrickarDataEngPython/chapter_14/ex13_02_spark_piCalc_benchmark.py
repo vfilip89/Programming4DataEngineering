@@ -12,6 +12,8 @@ import matplotlib.pyplot as plt
 import subprocess
 import os
 from numba import jit, prange
+import pandas as pd
+
 
 # Initialize function for Monte Carlo method
 def inside(_):
@@ -138,9 +140,9 @@ def estimate_pi_openmp(num_samples):
 
 # Benchmarking
 ## large
-# sample_sizes = [10_000, 50_000, 100_000, 500_000, 1_000_000, 5_000_000, 10_000_000, 50_000_000, 100_000_000, 500_000_000, 1_000_000_000]
+sample_sizes = [10_000, 50_000, 100_000, 500_000, 1_000_000, 5_000_000, 10_000_000, 50_000_000, 100_000_000, 500_000_000, 1_000_000_000, 5_000_000_000, 10_000_000_000]
 ## small
-sample_sizes = [10_000, 50_000, 100_000, 500_000, 1_000_000, 5_000_000, 10_000_000, 50_000_000, 100_000_000]
+# sample_sizes = [10_000, 50_000, 100_000, 500_000, 1_000_000, 5_000_000, 10_000_000, 50_000_000, 100_000_000]
 chunk_size=100_000_000
 spark_times, serial_times, mp_times, numpy_times, dask_times, ray_times, mpi_times = [], [], [], [], [], [], []
 numba_times = []
@@ -176,7 +178,7 @@ for num_samples in sample_sizes:
     pi_numba, time_numba = estimate_pi_openmp(num_samples)
     print(f"(Numba) Estimated Pi: {pi_numba:.8f} | Time: {time_numba:.4f}s")
 
-    # print(f"Running MPI Parallel Computing...")
+    print(f"Running MPI Parallel Computing...")
     output_file = f"mpi_results.bin"
     # Execute MPI command
     command = f"mpiexec --use-hwthread-cpus -n $(nproc) python mpi_pi_calc.py {num_samples}"
@@ -201,6 +203,30 @@ for num_samples in sample_sizes:
     numba_times.append(time_numba)
     mpi_times.append(time_mpi)
 
+print()
+print(f"Loading GPU calculations from COLab with Tesla T4...")
+# Data from Colab runs
+data = {
+    "num_samples": [
+        10_000, 50_000, 100_000, 500_000, 1_000_000, 5_000_000, 10_000_000,
+        50_000_000, 100_000_000, 500_000_000, 1_000_000_000, 5_000_000_000, 10_000_000_000
+    ],
+    "CuPy_time": [
+        0.0020, 0.0024, 0.0019, 0.0018, 0.0018, 0.0022, 0.0019, 0.0030, 0.0039, 
+        0.0144, 0.1355, 7.7530, 17.5241
+    ],
+    "JAX_time": [
+        0.0047, 0.0035, 0.0044, 0.0061, 0.0051, 0.0043, 0.0044, 0.0164, 0.0307, 
+        0.1467, 0.2878, 1.4555, 3.0754
+    ]
+}
+
+# Convert to DataFrame
+df = pd.DataFrame(data)
+
+# Display the DataFrame
+print(df)
+
 # Plot results
 plt.figure(figsize=(8, 5))
 plt.plot(sample_sizes, spark_times, marker='o', linestyle='-', label="Spark")
@@ -211,6 +237,8 @@ plt.plot(sample_sizes, dask_times, marker='x', linestyle='-', label="Dask Parall
 plt.plot(sample_sizes, ray_times, marker='p', linestyle='-', label="Ray Parallel")
 plt.plot(sample_sizes, numba_times, marker='*', linestyle='-', label="Numba JIT")
 plt.plot(sample_sizes, mpi_times, marker='h', linestyle='-', label="MPI Parallel")
+plt.plot(df["num_samples"], df["CuPy_time"], marker='v', linestyle='-', label="CuPy GPU")
+plt.plot(df["num_samples"], df["JAX_time"], marker='>', linestyle='-', label="JAX GPU")
 plt.xlabel("Number of Samples")
 plt.ylabel("Execution Time (seconds)")
 plt.xscale("log")

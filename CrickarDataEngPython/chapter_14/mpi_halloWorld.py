@@ -6,4 +6,4 @@ size = comm.Get_size()
 
 print(f"Hello from process {rank} out of {size}")
 
-# mpiexec --use-hwthread-cpus -n $(nproc) python mpi_script.py
+# mpiexec --use-hwthread-cpus -n $(nproc) python mpi_halloWorld.py
