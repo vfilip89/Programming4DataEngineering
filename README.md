@@ -1,6 +1,6 @@
 
 🚀 Data Engineering, ETL & Data Integration – Hands-on Projects –
-Jan 2024 - PresentJan 2024 - Present
+Jan 2024 - Present
 
         📌 GitHub Repository: https://github.com/vfilip89?tab=repositories
 
