@@ -62,4 +62,4 @@ This repository showcases data engineering projects developed while studying **D
 ## 🚀 **Next Steps**
 - Expanding Kubernetes-based **NiFi clusters** with multiple nodes.
 
-📊 **This repository is actively maintained & evolving! Stay tuned for more updates!**
+📊 **My repositories are actively maintained & evolving! Stay tuned for more updates!**
