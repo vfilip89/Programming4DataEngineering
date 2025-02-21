@@ -6,7 +6,11 @@ Jan 2024 - PresentJan 2024 - Present
 
         Overview
 
-        This repository showcases data engineering projects developed while studying Data Engineering. It covers ETL workflows, automation, real-time processing, version control, monitoring, and cloud-based solutions using Apache NiFi, Airflow, Kafka, Spark, PostgreSQL, and Elasticsearch.
+        This repository showcases data engineering projects developed 
+        while studying Data Engineering. It covers ETL workflows, 
+        automation, real-time processing, version control, monitoring, 
+        and cloud-based solutions using Apache NiFi, Airflow, Kafka, 
+        Spark, PostgreSQL, and Elasticsearch.
 
         🔹 Key Features & Implementations
 
