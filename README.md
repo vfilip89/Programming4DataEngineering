@@ -1,6 +1,6 @@
 # 🚀 Data Engineering, ETL & Data Integration – Hands-on Projects (Jan 2024 - Present)
 
-## 📌 GitHub Repositories: [vfilip89-data-engineering-repositries](https://github.com/vfilip89?tab=repositories)
+## 📌 GitHub Repositories: [vfilip89-data-engineering-repositories](https://github.com/vfilip89?tab=repositories)
 
 ### **Overview**
 This repository showcases data engineering projects developed while studying **Data Engineering**. It covers **ETL workflows, automation, real-time processing, version control, monitoring, and cloud-based solutions** using:
