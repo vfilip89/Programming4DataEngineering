@@ -53,13 +53,14 @@ This repository showcases data engineering projects developed while studying **D
 ### 👉 **Databases**: PostgreSQL, Elasticsearch
 ### 👉 **Programming**: Python (pandas, psycopg2), SQL
 ### 👉 **Monitoring**: Kibana, NiFi REST API
-### 👉 **Containerization & Orchestration**: Docker, Kubernetes, Minikube, Helm, NiFiKop
+### 👉 **Containerization & Orchestration**: Docker, Kubernetes
 ### 👉 **Version Control**: GitHub, NiFi Registry
 ### 👉 **Cloud & Big Data**: AWS (S3, Lambda), GCP (BigQuery, Dataflow)
 
 ---
 
 ## 🚀 **Next Steps**
-- Expanding Kubernetes-based **NiFi clusters** with multiple nodes.
+- Exploring **Containerization & Orchestration** with Docker & Kubernetes
+- Exploring Cloud & Big Data Integration **AWS/GCP** for scalability
 
 📊 **My repositories are actively maintained & evolving! Stay tuned for more updates!**
