@@ -83,16 +83,17 @@ docker compose exec postgres psql -U postgres
 
 ## 🗂️ Detailed SQL-Tutorial Workflow
 
-Inside `psql`:
+We use the psql CLI inside the Postgres container to practice SQL.  
+Below is a step-by-step workflow with code, comments, and screenshots from pgAdmin for visualisation.
 
 ```sql
--- Create a database
+-- Create a new database called, e.g., 'mydb'
 CREATE DATABASE mydb;
 \c mydb
 ```
-![alt text](image.png)
+![alt text](images4READme/image.png)
 
-You are now connected to database "mydb" as user "postgres".
+✅ Output: We are now connected to database "mydb" as user "postgres".
 
 ```sql
 -- Create a table
@@ -104,12 +105,12 @@ CREATE TABLE users (
     date_of_birth DATE
 );
 ```
-You can see tables in CLI or pgadmin 
+🔎 Check available tables using CLI or pgAdmin 
 
 ```sql
 \dt
 ```
-![alt text](image-1.png)
+![alt text](images4READme/image-1.png)
 
 
 
@@ -134,7 +135,9 @@ mydb=# INSERT INTO users (first_name, last_name, email, date_of_birth) VALUES
 -- Query data
 SELECT * FROM users;
 ```
-![alt text](image-2.png)
+📊 Example query output:
+
+![alt text](images4READme/image-2.png)
 
 ---
 
