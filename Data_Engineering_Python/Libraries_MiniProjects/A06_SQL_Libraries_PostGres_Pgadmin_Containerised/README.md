@@ -136,6 +136,7 @@ mydb=# INSERT INTO users (first_name, last_name, email, date_of_birth) VALUES
 SELECT * FROM users;
 ```
 📊 Example query output:
+
 ![alt text](images4READme/03-query-users.png)
 
 Let's proceed with updating data and 🔎 querying data
