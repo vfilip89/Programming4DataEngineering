@@ -158,16 +158,15 @@ UPDATE users SET email = 'new_email@gmail.com' WHERE first_name = 'John';
 ```
 ![alt text](images4READme/06-update-john.png)
 
+After updating a row, notice that John's record is now shown at the bottom of the table output in pgAdmin. This happens because the default `SELECT * FROM users;` does not guarantee any ordering and the rows are returned in the order the database engine chooses. Since John's row was modified, it was effectively moved to the end of the result set in this view.
+
 ```sql
 -- Order users by ID
 SELECT * FROM users ORDER BY id;
 ```
+By explicitly using `ORDER BY`, the rows are sorted consistently by the id column, ensuring stable and predictable results, regardless of update operations.
+
 ![alt text](images4READme/07-users-ordered.png)
-
-
-
-
-
 
 
 
