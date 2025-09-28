@@ -91,7 +91,7 @@ Below is a step-by-step workflow with code, comments, and screenshots from pgAdm
 CREATE DATABASE mydb;
 \c mydb
 ```
-![alt text](images4READme/image.png)
+![alt text](images4READme/01-create-db.png)
 
 ✅ Output: We are now connected to database "mydb" as user "postgres".
 
@@ -110,7 +110,7 @@ CREATE TABLE users (
 ```sql
 \dt
 ```
-![alt text](images4READme/image-1.png)
+![alt text](images4READme/02-check-tables.png)
 
 
 
@@ -136,8 +136,44 @@ mydb=# INSERT INTO users (first_name, last_name, email, date_of_birth) VALUES
 SELECT * FROM users;
 ```
 📊 Example query output:
+![alt text](images4READme/03-query-users.png)
 
-![alt text](images4READme/image-2.png)
+Let's proceed with updating data and 🔎 querying data
+
+```sql
+-- Get all unique email addresses
+SELECT DISTINCT email FROM users;
+```
+![alt text](images4READme/04-distinct-emails.png)
+
+```sql
+-- Select all users with first_name = 'John'
+SELECT * FROM users WHERE first_name = 'John';
+```
+![alt text](images4READme/05-users-john.png)
+
+```sql
+-- Update John's email address
+UPDATE users SET email = 'new_email@gmail.com' WHERE first_name = 'John';
+```
+![alt text](images4READme/06-update-john.png)
+
+```sql
+-- Order users by ID
+SELECT * FROM users ORDER BY id;
+```
+![alt text](images4READme/07-users-ordered.png)
+
+
+
+
+
+
+
+
+
+
+
 
 ---
 
