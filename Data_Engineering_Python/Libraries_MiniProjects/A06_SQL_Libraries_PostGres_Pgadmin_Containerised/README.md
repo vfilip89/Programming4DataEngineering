@@ -732,6 +732,7 @@ SELECT title AS "movie name",
 FROM films f;
 ```
 📊 Output: Each film title paired with one actor.
+
 ![alt text](images4READme/21-subquery-film-actor.png)
 
 Example 2 — Actor with one film:
