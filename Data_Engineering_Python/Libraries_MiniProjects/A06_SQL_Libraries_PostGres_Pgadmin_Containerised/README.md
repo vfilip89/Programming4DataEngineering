@@ -797,6 +797,9 @@ docker compose exec -T postgres psql -U postgres -d mydb < backup.sql
 
 ### Backup persistent volumes
 ```bash
+# Important: First stop running containers!!
+docker compose down
+
 # Postgres data
 docker run --rm \
   -v data-eng-sql-postgres-pgadmin_postgres-data:/volume \
